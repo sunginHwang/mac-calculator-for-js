@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mac calculator</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+          crossorigin="anonymous">
+</head>
+<body>
+<header>
+    <button class="test-button" onclick="calculatorTest()">테스트 버튼</button>
+</header>
+<main>
+    <input type="text" class="display" id="display" value="0" disabled/>
+    <div class="calculator-row">
+        <button id="calculator-clear"
+                class="clear-button clear"
+                data-clear-type="allClear"
+                onclick="clearClick()">AC</button>
+        <button class="clear-button button-four-grow" ></button>
+        <button class="operator-button /" value="divide" onclick="operatorClick('/')">
+            <i class="fas fa-divide"></i>
+        </button>
+    </div>
+    <div class="calculator-row">
+        <button class="normal-button value-7" onclick="numberClick('7')">7</button>
+        <button class="normal-button value-8" onclick="numberClick('8')">8</button>
+        <button class="normal-button value-9" onclick="numberClick('9')">9</button>
+        <button class="operator-button *" onclick="operatorClick('*')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="calculator-row">
+        <button class="normal-button value-4" onclick="numberClick('4')">4</button>
+        <button class="normal-button value-5" onclick="numberClick('5')">5</button>
+        <button class="normal-button value-6" onclick="numberClick('6')">6</button>
+        <button class="operator-button -" onclick="operatorClick('-')">
+            <i class="fas fa-minus"></i>
+        </button>
+    </div>
+    <div class="calculator-row">
+        <button class="normal-button value-1" onclick="numberClick('1')">1</button>
+        <button class="normal-button value-2" onclick="numberClick('2')">2</button>
+        <button class="normal-button value-3" onclick="numberClick('3')">3</button>
+        <button class="operator-button +" onclick="operatorClick('+')">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+    <div class="calculator-row">
+        <button class="normal-button button-four-grow value-0" onclick="numberClick('0')">0</button>
+        <button class="normal-button button-one-grow decimal" onclick="decimalClick()">.</button>
+        <button class="button-one-grow  operator-button equal" onclick="equalClick()">
+            <i class="fas fa-equals"></i>
+        </button>
+    </div>
+</main>
+<script type="module" >
+    import { numberClick, decimalClick, operatorClick, clearClick, calculatorKeyboardEvent, equalClick } from './calculator.js';
+    import { calculatorTest } from './test/calculatorTest.js';
+
+    // click functions
+    window.numberClick = numberClick;
+    window.decimalClick = decimalClick;
+    window.clearClick = clearClick;
+    window.operatorClick = operatorClick;
+    window.equalClick = equalClick;
+
+    //keyboard functions
+    window.onkeydown = calculatorKeyboardEvent;
+
+    // unitTest
+    window.calculatorTest = calculatorTest;
+</script>
+</body>
+
+</html>

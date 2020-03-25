@@ -1,0 +1,119 @@
+:root {
+    --input-value-bg-color: #807F80;
+    --active-input-value-bg-color: #9FA1A4;
+    --clear-bg-color: #676564;
+    --operator-bg-color: #FF9500;
+    --active-operator-bg-color: #C0802E;
+    --display-bg-color: #4D4B4C;
+    --button-line-color : #585656;
+    --top-button-bg-color : #666665;
+    --active-top-button-bg-color : #5E5F66;
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+header{
+    margin: 2rem;
+}
+
+main {
+    width: 30rem;
+    height: auto;
+    margin: 0 auto;
+    background-color: var(--display-bg-color);;
+    box-sizing: border-box;
+    padding: 0;
+    border-radius: .5rem;
+}
+
+button {
+    width: 5rem;
+    height: 6rem;
+    border: solid var(--button-line-color) .1rem;
+    color: white;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 2rem;
+    flex-grow: 1;
+    outline: none;
+}
+
+
+
+.normal-button {
+    background-color: var(--input-value-bg-color);
+}
+
+.normal-button-active{
+    background-color: var(--active-input-value-bg-color);
+}
+
+.clear-button {
+    background-color: var(--top-button-bg-color);
+}
+
+.clear-button-active{
+    background-color: var(--active-top-button-bg-color);
+}
+
+.operator-button {
+    color: white;
+    background-color: var(--operator-bg-color);
+}
+
+.operator-button-active {
+    background-color: var(--active-operator-bg-color);
+}
+
+
+.display {
+    width: 100%;
+    height: 7rem;
+    margin: 2.5rem auto 0 auto;
+    padding: 0 2rem .3rem 0;
+    box-sizing: border-box;
+    font-size: 3.4rem;
+    text-align: right;
+    background-color: var(--display-bg-color);
+    color: white;
+    border: none;
+}
+
+.calculator-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.calculator-row:last-child > button:first-child{
+    border-bottom-left-radius: .5rem;
+}
+
+.calculator-row:last-child > button:last-child{
+    border-bottom-right-radius: .5rem;
+}
+
+
+.button-four-grow {flex-grow: 4;}
+.button-one-grow {flex-grow: 1;}
+
+.test-button {
+    width: 10rem;
+    font-size: 1.5rem;
+    background-color: var(--display-bg-color);
+    cursor: pointer;
+}
